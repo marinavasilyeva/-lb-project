@@ -26,7 +26,7 @@
     phase: 'explore', player: { x: world.start.x, y: world.start.y, dir: 'down', step: 0 },
     collected: new Set(), introQuestsUnlocked: false, wrongSockSeen: 0, wrongSockStreak: 0, catDisappointedUntil: 0,
     catTalkStreak: 0, catTalkText: null, catEasterSeen: false,
-    saladFound: false, secretOpen: false, dialogueQueue: [], dialogueDone: null,
+    saladFound: false, discFound: false, secretOpen: false, secretDone: null, dialogueQueue: [], dialogueDone: null,
     keys: new Set(), nearest: null, time: 0, particles: [], sound: true, audio: null,
     audioUnlocked: false, music: {}, activeMusic: null, exploreIntroCompleted: false,
     victoryClip: null, victoryPlaying: false, cutsceneVoice: null, cutsceneVoiceStarted: false,
@@ -54,8 +54,9 @@
   }
   function renderInventory() {
     const hasOlivier=state.saladFound&&!state.battle.saladUsed;
-    $('inventoryEmpty').hidden=hasOlivier;
+    $('inventoryEmpty').hidden=hasOlivier||state.discFound;
     $('inventoryOlivier').hidden=!hasOlivier;
+    $('inventoryDisc').hidden=!state.discFound;
   }
 
   function rect(x, y, w, h, color) {
@@ -560,7 +561,7 @@
     ui.speaker.textContent=line.speaker||'Мысли';ui.text.textContent=line.text;
     ui.dialogue.hidden=false;playTone(630,.035,'triangle',.025);
   }
-  function collect(item) {
+  function collect(item,secretKind=null) {
     if(item.kind==='sock'&&item.id!=='sock') {
       const line=cfg.text.wrongSock[state.wrongSockSeen++%cfg.text.wrongSock.length];
       if(!state.collected.has('sock')&&++state.wrongSockStreak>=2)state.catDisappointedUntil=performance.now()+5000;
@@ -572,12 +573,29 @@
     const count=state.collected.size;renderQuests();
     burst(item.x*T,item.y*T,'#fff1a9',18);playTone(740,.1);later(()=>playTone(990,.16),110);
     const key=item.id==='sock'?'sockFound':item.id==='mug'?'mugFound':'snackFound';
-    if(count===3) {
+    if(secretKind) {
+      showDialogue({speaker:'Кот',text:cfg.text[key]},()=>showSecret(secretKind,count===3?()=>showDialogue(cfg.text.allFound):null));
+    } else if(count===3) {
       showDialogue([{speaker:'Кот',text:cfg.text[key]},...cfg.text.allFound]);
     } else showDialogue({speaker:'Кот',text:cfg.text[key]});
   }
+  function showSecret(kind,done=null) {
+    const disc=kind==='disc',text=cfg.text.secrets[kind];
+    if(disc)state.discFound=true;else state.saladFound=true;
+    $('secretTitle').textContent=text.title;
+    $('secretDescription').textContent=text.description;
+    $('secretClose').textContent=text.action;
+    $('secretImage').src=disc?'assets/game-disc.svg':'assets/olivier.svg';
+    $('secretImage').alt=disc?'Пиксельный диск с игрой Resonance: A Plague Tale Legacy':'Пиксельная миска оливье';
+    state.secretOpen=true;state.secretDone=done;ui.secret.hidden=false;ui.prompt.hidden=true;
+    renderInventory();playTone(880,.14,'triangle',.08);
+  }
   function closeSecret() {
-    state.secretOpen=false;ui.secret.hidden=true;updatePrompt();
+    if(!state.secretOpen)return;
+    state.secretOpen=false;ui.secret.hidden=true;
+    const done=state.secretDone;state.secretDone=null;
+    if(done)done();
+    updatePrompt();
   }
   function interact() {
     if(state.secretOpen)return;
@@ -591,9 +609,7 @@
     if(target.kind==='antlers') {showDialogue({speaker:'Мысли',text:cfg.text.antlers});return;}
     if(target.kind==='furniture'&&target.data.type==='fridge') {
       if(state.saladFound){showDialogue({speaker:'Мысли',text:cfg.text.furniture.fridge});return;}
-      state.saladFound=true;state.secretOpen=true;ui.secret.hidden=false;ui.prompt.hidden=true;
-      renderInventory();
-      playTone(880,.14,'triangle',.08);return;
+      showSecret('olivier');return;
     }
     if(target.kind==='furniture'&&target.data.type==='couch'&&!state.collected.has('sock')) {
       showDialogue({speaker:'Мысли',text:cfg.text.couchBattle.found},()=>startBattle('couch'));return;
@@ -697,7 +713,7 @@
     later(()=>{
       const couch=world.furniture.find(f=>f.type==='couch');
       state.phase='explore';ui.overlay.hidden=true;ui.battle.hidden=true;renderQuests();
-      collect({id:'sock',kind:'sock',x:couch.x+couch.w/2,y:couch.y});
+      collect({id:'sock',kind:'sock',x:couch.x+couch.w/2,y:couch.y},'disc');
       syncMusic();
     },1800);
   }
@@ -741,7 +757,7 @@
     state.phase='explore';state.player={x:world.start.x,y:world.start.y,dir:'down',step:0};state.collected.clear();state.introQuestsUnlocked=false;
     state.wrongSockSeen=0;state.wrongSockStreak=0;state.catDisappointedUntil=0;
     state.catTalkStreak=0;state.catTalkText=null;state.catEasterSeen=false;
-    state.saladFound=false;state.secretOpen=false;
+    state.saladFound=false;state.discFound=false;state.secretOpen=false;state.secretDone=null;
     state.battleKind='vacuum';state.battle={hp:3,bossHp:5,attacks:0,shield:false,busy:false,saladUsed:false};
     state.keys.clear();state.particles=[];state.dialogueQueue=[];state.dialogueDone=null;
     ui.overlay.hidden=true;ui.battle.hidden=true;ui.cutscene.hidden=true;ui.finale.hidden=true;ui.death.hidden=true;ui.secret.hidden=true;renderQuests();renderInventory();
@@ -814,7 +830,7 @@
   $('touchAction').addEventListener('click',()=>{if(!ui.dialogue.hidden)nextDialogue();else interact();});
   restart();unlockAudio();requestAnimationFrame(frame);
   // Read-only progress is useful when checking a local build in a browser.
-  window.gameProgress=()=>({phase:state.phase,battleKind:state.battleKind,collected:[...state.collected],player:{...state.player},heroHp:state.battle.hp,bossHp:state.battle.bossHp,saladUsed:state.battle.saladUsed,music:state.activeMusic,victoryPlaying:state.victoryPlaying,cutsceneVoicePlaying:!!state.cutsceneVoice&&!state.cutsceneVoice.paused,finaleLooping:state.music.finale?.loop===true,saladFound:state.saladFound,catDisappointed:performance.now()<state.catDisappointedUntil,catEasterSeen:state.catEasterSeen});
+  window.gameProgress=()=>({phase:state.phase,battleKind:state.battleKind,collected:[...state.collected],player:{...state.player},heroHp:state.battle.hp,bossHp:state.battle.bossHp,saladUsed:state.battle.saladUsed,music:state.activeMusic,victoryPlaying:state.victoryPlaying,cutsceneVoicePlaying:!!state.cutsceneVoice&&!state.cutsceneVoice.paused,finaleLooping:state.music.finale?.loop===true,saladFound:state.saladFound,discFound:state.discFound,catDisappointed:performance.now()<state.catDisappointedUntil,catEasterSeen:state.catEasterSeen});
   if(new URLSearchParams(location.search).has('smoke')) {
     window.gameTestTick=tick;
     window.gameTestFinishIntro=()=>{state.exploreIntroCompleted=true;syncMusic();};

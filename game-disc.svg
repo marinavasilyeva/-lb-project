@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 112" shape-rendering="crispEdges">
+  <title>Пиксельная коробка с игрой и диск</title>
+  <rect x="12" y="101" width="108" height="6" fill="#152535" opacity=".55"/>
+  <rect x="14" y="7" width="67" height="96" fill="#182838"/>
+  <rect x="18" y="11" width="59" height="88" fill="#afc5ca"/>
+  <rect x="18" y="11" width="7" height="88" fill="#6d909e"/>
+  <rect x="28" y="18" width="43" height="61" fill="#304958"/>
+  <rect x="28" y="55" width="43" height="24" fill="#a66e4d"/>
+  <rect x="33" y="51" width="33" height="8" fill="#e3bb79"/>
+  <rect x="38" y="33" width="6" height="23" fill="#f1d69b"/>
+  <rect x="44" y="33" width="14" height="5" fill="#f1d69b"/>
+  <rect x="54" y="38" width="5" height="9" fill="#f1d69b"/>
+  <rect x="44" y="45" width="10" height="5" fill="#f1d69b"/>
+  <rect x="49" y="50" width="5" height="5" fill="#f1d69b"/>
+  <rect x="54" y="55" width="6" height="5" fill="#f1d69b"/>
+  <rect x="29" y="85" width="41" height="7" fill="#f3e7ca"/>
+  <path d="M84 41h17v5h10v6h6v10h5v18h-5v10h-6v6h-10v5H84v-5H74v-6h-6V80h-5V62h5V52h6v-6h10z" fill="#1b2b3a"/>
+  <path d="M85 46h15v5h9v6h6v10h3v9h-3v10h-6v6h-9v5H85v-5h-9v-6h-5V76h-4v-9h4V57h5v-6h9z" fill="#c4d9d9"/>
+  <rect x="80" y="54" width="22" height="5" fill="#eef1dc"/>
+  <rect x="75" y="59" width="9" height="8" fill="#eef1dc"/>
+  <rect x="101" y="81" width="9" height="6" fill="#82b8c0"/>
+  <rect x="88" y="87" width="13" height="5" fill="#82b8c0"/>
+  <rect x="84" y="65" width="17" height="14" fill="#6b929e"/>
+  <rect x="88" y="68" width="9" height="8" fill="#203546"/>
+</svg>
