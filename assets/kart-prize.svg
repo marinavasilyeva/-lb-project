@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 288" shape-rendering="crispEdges" role="img" aria-label="Пиксельный картинг: герой, серый кот в шлеме посередине и подруга в очках">
+  <g fill="#eac978" opacity=".9">
+    <path d="M250 5h12v49h-12zM250 251h12v27h-12zM10 132h53v12H10zM449 132h53v12h-53zM63 39h11v11h11v11h11v11H85V61H74V50H63zM438 39h11v11h-11v11h-11v11h-11V61h11V50h11zM57 234h12v-12h12v-12h12v12H81v12H69v12H57zM443 234h-12v-12h-12v-12h-12v12h12v12h12v12h12z"/>
+    <path d="M153 21h10v31h-10zM349 21h10v31h-10zM107 88h7V76h7v12h12v7h-12v12h-7V95h-7zM384 87h7V75h7v12h12v7h-12v12h-7V94h-7z"/>
+  </g>
+  <g fill="#fff1bd"><rect x="210" y="26" width="7" height="7"/><rect x="294" y="32" width="7" height="7"/><rect x="29" y="92" width="6" height="6"/><rect x="476" y="91" width="6" height="6"/></g>
+  <rect x="63" y="261" width="386" height="10" fill="#142435" opacity=".45"/>
+  <g fill="#1d2b38"><rect x="100" y="142" width="105" height="55"/><rect x="205" y="139" width="102" height="58"/><rect x="307" y="142" width="105" height="55"/></g>
+  <g fill="#4f7780"><rect x="108" y="150" width="89" height="38"/><rect x="213" y="147" width="86" height="41"/><rect x="315" y="150" width="89" height="38"/></g>
+  <!-- Birthday hero: hair, face, yellow shirt, both arms. -->
+  <g>
+    <rect x="119" y="74" width="67" height="62" fill="#24303b"/><rect x="125" y="82" width="55" height="48" fill="#edbc98"/>
+    <path d="M119 96V76h6v-8h11v-5h34v5h11v7h5v13h-10v-5h-11v3h-10v4h-11v4h-12v5h-13z" fill="#382d2c"/>
+    <rect x="137" y="68" width="27" height="4" fill="#69483a"/><rect x="126" y="77" width="13" height="4" fill="#594035"/>
+    <rect x="119" y="89" width="9" height="20" fill="#382d2c"/><rect x="178" y="87" width="8" height="22" fill="#382d2c"/>
+    <rect x="139" y="104" width="5" height="5" fill="#27313e"/><rect x="161" y="104" width="5" height="5" fill="#27313e"/><rect x="146" y="119" width="15" height="3" fill="#9e6c67"/>
+    <rect x="126" y="135" width="53" height="52" fill="#24303b"/><rect x="132" y="140" width="41" height="43" fill="#f4d63e"/>
+    <rect x="109" y="145" width="19" height="16" fill="#f4d63e"/><rect x="105" y="158" width="13" height="25" fill="#edbc98"/><rect x="177" y="145" width="19" height="16" fill="#f4d63e"/><rect x="187" y="158" width="13" height="25" fill="#edbc98"/>
+  </g>
+  <!-- Grey cat in the center with racing helmet and two paws. -->
+  <g>
+    <rect x="222" y="85" width="68" height="62" fill="#202d3b"/><rect x="228" y="92" width="56" height="44" fill="#9ba6a8"/>
+    <rect x="226" y="80" width="58" height="20" fill="#f2e6bf"/><rect x="235" y="73" width="40" height="11" fill="#f9f2da"/><rect x="247" y="70" width="16" height="8" fill="#e6bd65"/>
+    <rect x="231" y="99" width="50" height="8" fill="#6daab0"/><rect x="225" y="120" width="62" height="27" fill="#8d989e"/>
+    <rect x="238" y="119" width="7" height="7" fill="#293541"/><rect x="267" y="119" width="7" height="7" fill="#293541"/><rect x="250" y="130" width="12" height="5" fill="#d29ba1"/>
+    <rect x="225" y="145" width="62" height="43" fill="#202d3b"/><rect x="231" y="151" width="50" height="33" fill="#92a1a4"/><rect x="225" y="160" width="12" height="25" fill="#aab4b2"/><rect x="275" y="160" width="12" height="25" fill="#aab4b2"/>
+  </g>
+  <!-- Friend: simple dark hair and bangs, glasses, both arms. -->
+  <g>
+    <rect x="326" y="75" width="69" height="61" fill="#252b36"/><rect x="332" y="82" width="57" height="48" fill="#e7b590"/>
+    <rect x="326" y="72" width="69" height="16" fill="#44332f"/><rect x="331" y="66" width="57" height="11" fill="#594039"/><rect x="328" y="86" width="8" height="24" fill="#44332f"/><rect x="385" y="86" width="8" height="24" fill="#44332f"/>
+    <rect x="339" y="101" width="18" height="15" fill="#27313c"/><rect x="342" y="104" width="12" height="9" fill="#c2d9d1"/><rect x="365" y="101" width="18" height="15" fill="#27313c"/><rect x="368" y="104" width="12" height="9" fill="#c2d9d1"/><rect x="356" y="105" width="9" height="4" fill="#27313c"/><rect x="353" y="122" width="16" height="3" fill="#a8716b"/>
+    <rect x="333" y="135" width="55" height="52" fill="#24303a"/><rect x="339" y="140" width="43" height="43" fill="#628269"/>
+    <rect x="315" y="145" width="19" height="16" fill="#628269"/><rect x="311" y="158" width="13" height="25" fill="#e7b590"/><rect x="387" y="145" width="19" height="16" fill="#628269"/><rect x="397" y="158" width="13" height="25" fill="#e7b590"/>
+  </g>
+  <!-- Kart body and wheels. -->
+  <g>
+    <rect x="63" y="180" width="386" height="63" fill="#1c2a39"/><rect x="71" y="187" width="370" height="49" fill="#438e96"/><rect x="78" y="190" width="356" height="11" fill="#8fc9be"/>
+    <rect x="80" y="207" width="352" height="25" fill="#d76f66"/><rect x="87" y="214" width="338" height="8" fill="#f1b779"/>
+    <rect x="55" y="205" width="29" height="26" fill="#263747"/><rect x="428" y="205" width="29" height="26" fill="#263747"/>
+    <rect x="199" y="200" width="114" height="35" fill="#243646"/><rect x="206" y="205" width="100" height="24" fill="#f0d178"/><rect x="231" y="209" width="50" height="16" fill="#fff0c0"/>
+    <text x="256" y="223" text-anchor="middle" font-family="monospace" font-size="18" font-weight="bold" fill="#2a3b49">01</text>
+    <rect x="78" y="233" width="356" height="10" fill="#1d2d3b"/>
+    <rect x="85" y="228" width="55" height="42" fill="#111c2a"/><rect x="93" y="235" width="39" height="28" fill="#3c4b56"/><rect x="103" y="241" width="19" height="16" fill="#879da4"/>
+    <rect x="372" y="228" width="55" height="42" fill="#111c2a"/><rect x="380" y="235" width="39" height="28" fill="#3c4b56"/><rect x="390" y="241" width="19" height="16" fill="#879da4"/>
+  </g>
+</svg>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171b27">
+  <title>Операция: День рождения — ретро-эпизод</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="masthead">
+      <div class="title-block">
+        <h1>Операция: <span>День рождения</span></h1>
+        <p class="tagline">Три находки. Один подозрительный пылесос. Один кот, который всё спланировал.</p>
+      </div>
+      <div class="header-leaves" aria-hidden="true">
+        <span class="header-leaf"></span><span class="header-leaf"></span>
+        <span class="header-leaf"></span><span class="header-leaf"></span>
+      </div>
+    </header>
+
+    <div class="game-layout">
+      <aside class="side-panel quest-journal" aria-label="Журнал заданий">
+        <div class="journal-heading"><h2>✦ ЖУРНАЛ ЗАДАНИЙ</h2></div>
+        <ol class="quest-list" aria-label="Все задания">
+          <li class="quest-row" data-quest="sock"><span class="quest-number quest-number-sock">01<span class="sample-sock" aria-hidden="true"></span></span><span class="quest-name"></span><span class="quest-state"></span></li>
+          <li class="quest-row" data-quest="mug"><span class="quest-number">02</span><span class="quest-name"></span><span class="quest-state"></span></li>
+          <li class="quest-row" data-quest="snack"><span class="quest-number">03</span><span class="quest-name"></span><span class="quest-state"></span></li>
+          <li class="quest-row" data-quest="boss" hidden><span class="quest-number">04</span><span class="quest-name"></span><span class="quest-state"></span></li>
+          <li class="quest-row" data-quest="gift" hidden><span class="quest-number">05</span><span class="quest-name"></span><span class="quest-state"></span></li>
+        </ol>
+        <div class="side-controls">
+          <div class="instructions"><span>УПРАВЛЕНИЕ</span>
+            <p><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> / <kbd>←</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>→</kbd><br>идти</p>
+            <p><kbd>E</kbd> / <kbd>Пробел</kbd><br>действие</p>
+            <p><kbd>Enter</kbd><br>диалог</p>
+          </div>
+          <div id="soundToggle" class="sound-toggle"><button type="button" aria-pressed="true" title="Выключить звук">♫ ЗВУК ВКЛ</button></div>
+        </div>
+      </aside>
+
+    <section class="game-cabinet" aria-label="Игра">
+      <div class="cabinet-top"><span class="status-light"></span> <span>КВАРТИРА КОТА / СЕЙЧАС</span></div>
+      <div class="screen-wrap">
+        <canvas id="game" width="832" height="480" aria-label="Пиксельная квартира. Управляйте героем клавишами WASD или стрелками."></canvas>
+        <div id="gameOverlay" class="game-overlay" hidden>
+          <div id="battlePanel" class="battle-panel" hidden>
+            <div class="battle-heading"><span id="battleHeading">◆ ИСПЫТАНИЕ</span><span id="battleTurn">ХОД ГЕРОЯ</span></div>
+            <div class="battle-scene">
+              <div id="battleHero" class="battle-sprite battle-hero" aria-hidden="true"></div>
+              <div id="battleEnemy" class="battle-sprite battle-vacuum" aria-hidden="true"></div>
+              <div id="battleFx" class="battle-fx" aria-hidden="true"></div>
+            </div>
+            <div class="battle-stats">
+              <div>ГЕРОЙ <span id="heroHearts" class="hearts">♥ ♥ ♥</span></div>
+              <div><span id="enemyName">РОБОТ-ПЫЛЕСОС</span> <span id="bossHearts" class="hearts">♥ ♥ ♥ ♥ ♥</span></div>
+            </div>
+            <p id="battleLog" class="battle-log" role="status"></p>
+            <div class="battle-actions">
+              <button id="attackButton" type="button">▲ Атаковать</button>
+              <button id="defendButton" type="button">◆ Защищаться</button>
+              <button id="superButton" type="button" disabled>✦ Супер атака</button>
+              <button id="saladButton" type="button" class="salad-button" hidden>✦ Бросить оливье</button>
+            </div>
+          </div>
+          <div id="cutscenePanel" class="cutscene-panel" hidden aria-label="Короткая сцена на крыше небоскрёба">
+            <img src="assets/rooftop-gag.svg" alt="Герой с дробовиком стоит на крыше схематичного небоскрёба ночью">
+            <button id="cutsceneSkip" type="button">▶ ПРОДОЛЖИТЬ</button>
+          </div>
+          <div id="finalPanel" class="final-panel" hidden>
+            <div class="confetti" aria-hidden="true"></div>
+            <p class="final-overline">✦ ПРИЗ РАЗБЛОКИРОВАН ✦</p>
+            <h2 id="finalTitle"></h2>
+            <p id="finalSubtitle" class="final-subtitle"></p>
+            <div id="giftArea" class="gift-area"><img src="assets/kart-prize.svg" alt="Приз: пиксельный картинг, в котором сидят герой, его подруга с тёмными волосами и очками, и серый кот в шлеме"></div>
+            <button id="restartButton" type="button" class="restart-button">↻ Сыграть ещё раз</button>
+          </div>
+          <div id="deathPanel" class="death-panel" hidden>
+            <h2>YOU DIED</h2>
+            <p id="deathText">Пылесос победил. Кот утверждает, что это была репетиция.</p>
+            <button id="retryButton" type="button">↻ Попробовать ещё раз</button>
+          </div>
+        </div>
+        <div id="secretPanel" class="secret-panel" hidden role="dialog" aria-modal="true" aria-labelledby="secretTitle">
+          <h2 id="secretTitle">Ты нашёл секрет</h2>
+          <img src="assets/olivier.svg" alt="Пиксельная миска оливье">
+          <p>Миска самого вкусного салата!</p>
+          <button id="secretClose" type="button">ЗАБРАТЬ ОЛИВЬЕ</button>
+        </div>
+        <div id="dialogue" class="dialogue" hidden role="dialog" aria-label="Диалог">
+          <div id="dialogueSpeaker" class="dialogue-speaker"></div>
+          <p id="dialogueText"></p>
+          <button id="dialogueNext" type="button" aria-label="Продолжить диалог">ПРОДОЛЖИТЬ <span>▼</span></button>
+        </div>
+        <div id="interactPrompt" class="interact-prompt" hidden><kbd>E</kbd> <span id="interactLabel">Осмотреть</span></div>
+      </div>
+    </section>
+      <aside class="side-panel inventory-panel" aria-label="Инвентарь">
+        <h2>◆ ИНВЕНТАРЬ</h2>
+        <p id="inventoryEmpty">Пока пусто</p>
+        <div id="inventoryOlivier" class="inventory-item" hidden><img src="assets/olivier.svg" alt="Миска оливье"><span>Оливье</span></div>
+      </aside>
+    </div>
+
+    <div class="touch-controls" aria-label="Сенсорное управление">
+      <div class="dpad"><button type="button" data-dir="up" aria-label="Вверх">▲</button><div><button type="button" data-dir="left" aria-label="Влево">◀</button><button type="button" data-dir="down" aria-label="Вниз">▼</button><button type="button" data-dir="right" aria-label="Вправо">▶</button></div></div>
+      <button id="touchAction" class="touch-action" type="button">E <span>ДЕЙСТВИЕ</span></button>
+    </div>
+    <p class="footer-note">СДЕЛАНО С ЛЮБОВЬЮ<span>ОСЕНЬ 2026</span></p>
+  </main>
+  <script src="config.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

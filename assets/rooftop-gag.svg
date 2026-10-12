@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 832 480" shape-rendering="crispEdges" role="img" aria-label="Пиксельная шутливая сцена: герой с дробовиком стоит на крыше небоскрёба ночью">
+  <rect width="832" height="480" fill="#142031"/>
+  <rect x="0" y="0" width="832" height="190" fill="#1b293c"/>
+  <g fill="#34465b"><rect x="54" y="55" width="5" height="5"/><rect x="119" y="102" width="4" height="4"/><rect x="211" y="44" width="5" height="5"/><rect x="305" y="81" width="3" height="3"/><rect x="560" y="63" width="5" height="5"/><rect x="737" y="119" width="5" height="5"/></g>
+  <rect x="652" y="64" width="55" height="55" fill="#f2d99c"/><rect x="660" y="72" width="39" height="39" fill="#fff1be"/>
+  <g fill="#243346">
+    <rect x="0" y="178" width="120" height="302"/><rect x="91" y="214" width="110" height="266"/>
+    <rect x="650" y="198" width="91" height="282"/><rect x="722" y="159" width="110" height="321"/>
+  </g>
+  <g fill="#607386" opacity=".55">
+    <path d="M15 200h10v17H15zM47 200h10v17H47zM79 200h10v17H79zM15 235h10v17H15zM47 235h10v17H47zM79 235h10v17H79zM15 270h10v17H15zM47 270h10v17H47zM79 270h10v17H79z"/>
+    <path d="M110 241h9v15h-9zM139 241h9v15h-9zM168 241h9v15h-9zM110 277h9v15h-9zM139 277h9v15h-9zM168 277h9v15h-9z"/>
+    <path d="M671 225h9v15h-9zM697 225h9v15h-9zM671 260h9v15h-9zM697 260h9v15h-9zM741 187h11v17h-11zM777 187h11v17h-11zM741 225h11v17h-11zM777 225h11v17h-11z"/>
+  </g>
+  <rect x="176" y="293" width="482" height="187" fill="#101a29"/>
+  <rect x="188" y="307" width="458" height="173" fill="#304053"/>
+  <rect x="184" y="307" width="466" height="9" fill="#718597"/>
+  <rect x="174" y="291" width="486" height="18" fill="#131e2b"/>
+  <rect x="182" y="294" width="470" height="7" fill="#8999a0"/>
+  <rect x="200" y="265" width="16" height="27" fill="#1d2a3b"/><rect x="196" y="261" width="24" height="8" fill="#6a7784"/>
+  <rect x="601" y="246" width="9" height="45" fill="#202d3c"/><rect x="588" y="241" width="35" height="7" fill="#6f8190"/>
+  <g fill="#5a6d7c">
+    <path d="M217 341h24v35h-24zM263 341h24v35h-24zM309 341h24v35h-24zM355 341h24v35h-24zM401 341h24v35h-24zM447 341h24v35h-24zM493 341h24v35h-24zM539 341h24v35h-24zM585 341h24v35h-24z"/>
+    <path d="M217 401h24v35h-24zM263 401h24v35h-24zM309 401h24v35h-24zM355 401h24v35h-24zM401 401h24v35h-24zM447 401h24v35h-24zM493 401h24v35h-24zM539 401h24v35h-24zM585 401h24v35h-24z"/>
+  </g>
+  <g fill="#edcd8c" opacity=".55"><rect x="221" y="345" width="16" height="25"/><rect x="359" y="345" width="16" height="25"/><rect x="497" y="345" width="16" height="25"/><rect x="267" y="405" width="16" height="25"/><rect x="451" y="405" width="16" height="25"/><rect x="589" y="405" width="16" height="25"/></g>
+  <rect x="335" y="301" width="159" height="7" fill="#0b1320" opacity=".65"/>
+  <!-- A simple dark-haired rooftop hero in a black jacket and white shirt. -->
+  <g id="hero">
+    <rect x="365" y="276" width="20" height="25" fill="#101721"/><rect x="402" y="276" width="20" height="25" fill="#101721"/>
+    <rect x="368" y="279" width="13" height="16" fill="#262b34"/><rect x="405" y="279" width="13" height="16" fill="#262b34"/>
+    <rect x="361" y="294" width="27" height="8" fill="#090e17"/><rect x="399" y="294" width="27" height="8" fill="#090e17"/>
+    <rect x="344" y="250" width="17" height="31" fill="#0d131c"/><rect x="348" y="253" width="10" height="24" fill="#252b34"/>
+    <rect x="346" y="279" width="12" height="11" fill="#e7b18d"/><rect x="348" y="286" width="8" height="4" fill="#c18c73"/>
+    <rect x="359" y="247" width="71" height="38" fill="#0d131c"/>
+    <rect x="365" y="252" width="59" height="28" fill="#242932"/>
+    <rect x="382" y="250" width="23" height="30" fill="#eee9da"/>
+    <rect x="385" y="250" width="17" height="4" fill="#c8c9c4"/>
+    <rect x="365" y="252" width="15" height="28" fill="#161b24"/><rect x="407" y="252" width="17" height="28" fill="#161b24"/>
+    <rect x="370" y="251" width="10" height="7" fill="#333b45"/><rect x="408" y="251" width="10" height="7" fill="#333b45"/>
+    <rect x="425" y="251" width="15" height="24" fill="#0d131c"/><rect x="429" y="255" width="10" height="18" fill="#252b34"/>
+    <rect x="366" y="202" width="58" height="47" fill="#151c27"/>
+    <rect x="372" y="207" width="46" height="37" fill="#e7b18d"/>
+    <path d="M370 210v-11h6v-5h7v-4h27v4h7v5h5v8h-10v-4h-9v3h-9v3h-9v4h-7v-3z" fill="#382d2c"/>
+    <rect x="382" y="194" width="23" height="3" fill="#69483a"/>
+    <rect x="375" y="199" width="11" height="3" fill="#594034"/>
+    <rect x="368" y="207" width="8" height="17" fill="#382d2c"/>
+    <rect x="416" y="207" width="7" height="13" fill="#382d2c"/>
+    <rect x="382" y="224" width="5" height="4" fill="#26313d"/><rect x="405" y="224" width="5" height="4" fill="#26313d"/>
+    <rect x="390" y="238" width="12" height="2" fill="#9d6864"/>
+  </g>
+  <!-- A clean shotgun outline; the hands are visibly separate from its metal parts. -->
+  <g id="shotgun">
+    <rect x="420" y="261" width="29" height="12" fill="#111822"/>
+    <rect x="424" y="264" width="21" height="6" fill="#765542"/>
+    <rect x="446" y="256" width="27" height="17" fill="#111822"/>
+    <rect x="450" y="260" width="18" height="8" fill="#69747d"/>
+    <rect x="470" y="253" width="91" height="14" fill="#101721"/>
+    <rect x="472" y="256" width="85" height="6" fill="#aab3b7"/>
+    <rect x="472" y="263" width="79" height="2" fill="#596772"/>
+    <rect x="487" y="267" width="30" height="6" fill="#684a3a"/>
+    <rect x="553" y="252" width="10" height="16" fill="#111822"/>
+    <rect x="451" y="272" width="7" height="10" fill="#4a352d"/>
+  </g>
+  <g id="hands">
+    <rect x="438" y="270" width="16" height="10" fill="#111822"/>
+    <rect x="440" y="270" width="12" height="7" fill="#e7b18d"/>
+    <rect x="427" y="277" width="58" height="8" fill="#101721"/>
+    <rect x="477" y="271" width="16" height="11" fill="#111822"/>
+    <rect x="480" y="271" width="11" height="8" fill="#e7b18d"/>
+  </g>
+  <g fill="#718499" opacity=".3"><path d="M81 68h3v14h-3zM130 121h3v14h-3zM245 93h3v14h-3zM286 154h3v14h-3zM571 124h3v14h-3zM739 45h3v14h-3zM797 113h3v14h-3z"/></g>
+</svg>
